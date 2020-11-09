@@ -128,8 +128,8 @@ class novo extends Component {
     };
  
     handleSubmit = event => {
-        fetch(`${process.env.REACT_APP_API_URL}
-        /sistema/cliente`, {
+        console.log(`${process.env.REACT_APP_API_URL}`);
+        fetch(`https://clientebd.herokuapp.com/sistema/cliente`, {
             method: "post",
             body: JSON.stringify(this.state.cliente),
             headers: {

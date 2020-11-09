@@ -17,8 +17,7 @@ export default class Cliente extends Component{
     };
  
     componentDidMount() {
-        fetch(`${process.env.REACT_APP_API_URL}
-        /sistema/cliente`)
+        fetch(`https://clientebd.herokuapp.com/sistema/cliente`)
             .then(cliente =>
                 cliente.json().then(cliente => this.setState({ cliente: cliente }))
             )
@@ -35,7 +34,7 @@ export default class Cliente extends Component{
         return (
 
             <div className="usuario-list">
-                <Link to={`/novo`}> <button type="button" class="btn btn-success">Novo</button> </Link>
+                <Link to={`/novo`}> <button type="button" className="btn btn-success">Novo</button> </Link>
                 <br /><br />
  
                 <Table striped bordered hover>
@@ -60,9 +59,9 @@ export default class Cliente extends Component{
                                 <td>{cliente.end}</td>
                                 <td>{cliente.telefone }</td>
                                 <td>{cliente.email}</td>
-                                <td> <Link to={`/cliente/${cliente.idCliente}`}> <button type="button" class="btn btn-primary">Detalhes</button> </Link> </td>
-                                <td> <Link to={`/editar/${cliente.idCliente}`}> <button type="button" class="btn btn-warning">Editar</button> </Link></td>
-                                <td> <Link to={`/delete/${cliente.idCliente}`}> <button type="button" class="btn btn-danger">Excluir</button> </Link></td>
+                                <td> <Link to={`/cliente/${cliente.idCliente}`}> <button type="button" className="btn btn-primary">Detalhes</button> </Link> </td>
+                                <td> <Link to={`/editar/${cliente.idCliente}`}> <button type="button" className="btn btn-warning">Editar</button> </Link></td>
+                                <td> <Link to={`/delete/${cliente.idCliente}`}> <button type="button" className="btn btn-danger">Excluir</button> </Link></td>
                             </tr>
                         ))}
                     </tbody>
