@@ -17,7 +17,7 @@ export default class Cliente extends Component{
     };
  
     componentDidMount() {
-        fetch(`https://clientebd.herokuapp.com/sistema/cliente`)
+        fetch('https://clientebd.herokuapp.com/sistema/cliente')
             .then(cliente =>
                 cliente.json().then(cliente => this.setState({ cliente: cliente }))
             )
