@@ -150,8 +150,7 @@ class Editar extends Component {
     handleSubmit = event => {
         const { idCliente } = this.state.cliente;
  
-        fetch(`${process.env.REACT_APP_API_URL}
-        /sistema/cliente/${idCliente}`, {
+        fetch(`https://clientebd.herokuapp.com/sistema/cliente/${idCliente}`, {
             method: "put",
             body: JSON.stringify(this.state.cliente),
             headers: {
